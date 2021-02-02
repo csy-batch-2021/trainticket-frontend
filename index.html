@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="node_modules/ticket-api-client/TicketApi.js"></script> -->
+</head>
+
+<body>
+    <div id="results">
+
+    </div>
+    <script type="module">
+        import { TicketAPI } from './node_modules/ticket-api-client/TicketApi.js';
+        const ticketAPI = new TicketAPI();
+        let trains = ticketAPI.search("Chennai Central", "Bangalore", "2021-02-02");
+        console.log(trains);
+        document.querySelector("#results").innerHTML = JSON.stringify(trains);
+    </script>
+</body>
+
+</html>
